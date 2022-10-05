@@ -21,7 +21,7 @@ Social media for pet owners to share their pets info, meme, or just find pet thi
 
 - Mock-up: https://whimsical.com/pethub-LdS4mXjnkFtWtWUkWDCrPz
 - Figma: https://www.figma.com/files/team/1158771382271261026
-- Live: https://pets-hub.netlify.app/ 
+- Live: https://pets-hub.netlify.app/
 
 ## API Specification
 
