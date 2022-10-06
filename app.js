@@ -23,6 +23,11 @@ const renderPost = (posts) => {
     .map((posts) => {
       return `
         <div class="card">
+          <div class="button-card">
+            <a href="#" class="deleted" id="${posts._id}">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#888888" d="M20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Z"/></svg>
+            </a>
+         </div>
           <div class="item-container">
             <div class="col-2">
               <div class="avatar"></div>
@@ -33,7 +38,7 @@ const renderPost = (posts) => {
                 <label class="text-username" for="">@celine</label>
               </span>
               <div class="post-container">
-                ${posts.description}
+                ${posts.status}
               </div>
               <div class="post-container">
                 <div class="button-posts">
@@ -80,7 +85,6 @@ const renderPost = (posts) => {
 
 function fetchPosts() {
   getPost().then((data) => {
-    console.log(data);
     renderPost(data);
   });
 }
@@ -90,6 +94,7 @@ window.delPost = async (_id) => {
   renderPost();
 };
 
+// submit posts
 formElement.addEventListener("submit", async (event) => {
   try {
     event.preventDefault();
@@ -99,7 +104,9 @@ formElement.addEventListener("submit", async (event) => {
       throw new Error("Please fill the post");
     }
     createPost(postValue).then(() => {
-      console.log("okok");
+      console.log("saved successfully");
+      fetchPosts();
+      formElement.reset();
     });
   } catch (error) {
     alert(error.message);
