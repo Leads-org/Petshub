@@ -6,4 +6,10 @@ const USERS_API = {
   getUserById: `${BACKEND_API_URL}/User/633c333adadc42808a40c6f6`,
 };
 
-export { USERS_API };
+const POSTING_API = {
+  getPost: `${BACKEND_API_URL}/Post?$lookup=*`,
+  createPost: `${BACKEND_API_URL}/Post`,
+  deletePost: (_id) => `${BACKEND_API_URL}/Post/${_id}`,
+};
+
+export { USERS_API, POSTING_API };

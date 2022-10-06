@@ -1,16 +1,17 @@
-import { URL_API } from "../url.js";
+import { POSTING_API } from "../config.js";
 
 export async function createPost(status) {
   try {
-    const payload = {
-      status,
+    const newPost = {
+      description: status,
+      title: null,
     };
-    const responseCreatePost = await fetch(URL_API.createPost, {
+    const responseCreatePost = await fetch(POSTING_API.createPost, {
       method: "POST",
-      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPost),
     });
-    const data = await responseCreatePost.json();
-    return data;
+    return responseCreatePost;
   } catch (error) {
     throw new error(error.message);
   }
