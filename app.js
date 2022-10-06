@@ -20,6 +20,7 @@ const postSectionElement = document.getElementById("post-section");
 
 const renderPost = (posts) => {
   postSectionElement.innerHTML = posts
+    .reverse()
     .map((posts) => {
       return `
         <div class="card">
