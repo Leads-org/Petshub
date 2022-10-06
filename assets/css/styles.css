@@ -39,6 +39,14 @@ body {
   background-color: #333;
 }
 
+.text-name {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
 /* Style the navigation bar links */
 .navbar a {
   color: white;
@@ -123,6 +131,52 @@ body {
   text-align: left;
 }
 
+span > .profile-name {
+  color: #ddd;
+  font-size: 12pt;
+  font-weight: bolder;
+  padding: 10px;
+  text-align: left;
+}
+
+.text-username {
+  color: #aaa;
+  font-size: 10pt;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.post-container {
+  padding: 10px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  color: #ddd;
+  font-size: 12pt;
+}
+
+.post-container .button-posts {
+  display: flex;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  width: 25%;
+  cursor: pointer;
+}
+
+.button-upload {
+  text-align: left;
+  border: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+svg:hover {
+  fill: #00e0ff;
+}
+
 .item-container > .profile-name > p {
   color: rgb(137, 135, 135);
   font-size: 8pt;
@@ -132,7 +186,7 @@ body {
 }
 
 .item-container > .action-button {
-  width: 100%;
+  width: 75%;
   text-align: right;
   margin-top: 0;
   margin-left: 10%;
@@ -177,11 +231,46 @@ body {
   color: #fff;
 }
 
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  text-align: justify;
+}
+
+.sidenav .active {
+  color: #00e0ff;
+}
+
+.sidenav a:hover {
+  color: #00e0ff;
+}
+
+.sidenav a:hover {
+  color: #00e0ff;
+  fill: #00e0ff;
+}
+
+svg:hover path {
+  fill: #00e0ff;
+}
+
 /* Footer */
 .footer {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  background: #ddd;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -189,5 +278,14 @@ body {
   .row,
   .navbar {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
   }
 }
