@@ -1,5 +1,6 @@
 import { createPost } from "./module/posts/create-post.js";
 import { getPost } from "./module/posts/get-post.js";
+import { deletePost } from "./module/posts/delete-post.js";
 
 const formElement = document.getElementById("post-field");
 const postSectionElement = document.getElementsByClassName(
@@ -9,21 +10,24 @@ const postSectionElement = document.getElementsByClassName(
 const renderPost = async () => {
   const posts = await getPost();
   postSectionElement.innerHTML = posts
-
     .reverse()
-    .map(({ description, UpdateAt }) => {
+    .map(({ status, _id }) => {
       return `
       <div class="post-container">
       <div class="col-2">
                 <div class="avatar"></div>
               </div>
-              <h2>${UpdateAt}</h2>
-        <h1>${description}</h1>
-        <button type="submit" class="button">delete</button>
+        <h1>${status}</h1>
+        <button onclick=delPost("${_id._id})class="button">delete</button>
         
       </div>`;
     })
     .join("");
+};
+
+const delPost = async (_id) => {
+  const delPosts = await deletePost();
+  delPosts();
 };
 
 formElement.addEventListener("submit", async (event) => {

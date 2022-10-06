@@ -1,9 +1,9 @@
 import { URL_API } from "../url.js";
 
-export async function createPost(post) {
+export async function createPost(status) {
   try {
     const payload = {
-      post,
+      status,
     };
     const responseCreatePost = await fetch(URL_API.createPost, {
       method: "POST",
