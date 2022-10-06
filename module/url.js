@@ -4,5 +4,5 @@ export const BASE_URL =
 export const URL_API = {
   getPost: `${BASE_URL}/Post?$lookup=*`,
   createPost: `${BASE_URL}/Post`,
-  deletePost: `${BASE_URL}/Post/:id`,
+  deletePost: (_id) => `${BASE_URL}/Post/${_id}`,
 };

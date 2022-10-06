@@ -18,16 +18,15 @@ const renderPost = async () => {
                 <div class="avatar"></div>
               </div>
         <h1>${status}</h1>
-        <button onclick=delPost("${_id._id})class="button">delete</button>
-        
+        <button onclick='delPost("${_id}")' type="submit" class="button">delete</button>
       </div>`;
     })
     .join("");
 };
 
-const delPost = async (_id) => {
-  const delPosts = await deletePost();
-  delPosts();
+window.delPost = async (_id) => {
+  const delPosts = await deletePost(_id);
+  renderPost();
 };
 
 formElement.addEventListener("submit", async (event) => {
