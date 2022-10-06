@@ -3,8 +3,7 @@ import { POSTING_API } from "../config.js";
 export async function createPost(status) {
   try {
     const newPost = {
-      description: status,
-      title: null,
+      status: status,
     };
     const responseCreatePost = await fetch(POSTING_API.createPost, {
       method: "POST",

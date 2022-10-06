@@ -104,6 +104,13 @@ body {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card .button-card {
+  outline: 0;
+  float: right;
+  display: block;
+  padding: 0px;
+}
+
 /* Fake image, just for this example */
 .fakeimg {
   background-color: #aaa;
