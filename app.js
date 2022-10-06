@@ -1,7 +1,19 @@
+
 import { createPost } from "./module/posts/create-post.js";
 import { getPost } from "./module/posts/get-post.js";
 import { deletePost } from "./module/posts/delete-post.js";
+import { getUserById } from "./features/user/get-user.js";
 
+const profileName = document.querySelector(".profile-name");
+
+// render user profile
+function renderUser() {
+  getUserById().then((data) => {
+    profileName.innerHTML = `
+        ${data.name}<p>@${data.nickname}</p>
+    `;
+  });
+}
 const formElement = document.getElementById("post-field");
 const postSectionElement = document.getElementsByClassName(
   "card-post-container"
@@ -42,3 +54,5 @@ formElement.addEventListener("submit", async (event) => {
 });
 
 renderPost();
+renderUser();
+
