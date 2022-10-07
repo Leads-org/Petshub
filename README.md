@@ -34,16 +34,16 @@ Live URLs:
 
 ## API Specification
 
-API URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pethub_users`
+API URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/user`
 
 ### Users
 
-| HTTP   | Endpoint            | Description   |
-| ------ | ------------------- | ------------- |
-| GET    | `/pethub_users`     | Get all users |
-| POST   | `/pethub_users`     | Create users  |
-| PATCH  | `/pethub_users/:id` | Edit users    |
-| DELETE | `/pethub_users/:id` | Delete users  |
+| HTTP   | Endpoint    | Description   |
+| ------ | ------------| ------------- |
+| GET    | `/user`     | Get all users |
+| POST   | `/user`     | Create users  |
+| PATCH  | `/user/:id` | Edit users    |
+| DELETE | `/user/:id` | Delete users  |
 
 ```json
 [
@@ -76,14 +76,14 @@ API URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a35
 
 ### Posts
 
-URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pethub_posts`
+URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/posts`
 
-| HTTP   | Endpoint            | Description   |
-| ------ | ------------------- | ------------- |
-| GET    | `/pethub_posts`     | Get all posts |
-| POST   | `/pethub_posts`     | Create posts  |
-| PATCH  | `/pethub_posts/:id` | Edit posts    |
-| DELETE | `/pethub_posts/:id` | Delete posts  |
+| HTTP   | Endpoint     | Description   |
+| ------ | -------------| ------------- |
+| GET    | `/posts`     | Get all posts |
+| POST   | `/posts`     | Create posts  |
+| PATCH  | `/posts/:id` | Edit posts    |
+| DELETE | `/posts/:id` | Delete posts  |
 
 ```json
 [
@@ -101,14 +101,14 @@ URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0a
 
 ### Pets
 
-URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pethub_pets?$lookup=*`
+URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pets?$lookup=*`
 
-| HTTP   | Endpoint           | Description   |
-| ------ | ------------------ | ------------- |
-| GET    | `/pethub_pets`     | Get all pets  |
-| POST   | `/pethub_pets`     | Create pets   |
-| PATCH  | `/pethub_pets/:id` | Edit pets     |
-| DELETE | `/pethub_pets/:id` | Delete pets   |
+| HTTP   | Endpoint    | Description   |
+| ------ | ------------| ------------- |
+| GET    | `/pets`     | Get all pets  |
+| POST   | `/pets`     | Create pets   |
+| PATCH  | `/pets/:id` | Edit pets     |
+| DELETE | `/pets/:id` | Delete pets   |
 
 ```json
 [
@@ -118,7 +118,7 @@ URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0a
     "color": "white",
     "name": "Cat",
     "notes": "like playing ball",
-    "pethub_users": [
+    "user": [
       {
         "_id": "633fe1e1dadc42808a40c8ce",
         "description": "pecinta kucing",
