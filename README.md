@@ -34,29 +34,40 @@ Live URLs:
 
 ## API Specification
 
-API URL: `https://api.kontenbase.com/query/api/v1/6158122d-ffc6-4101-a6dc-225b3c9a1f9c/User`
+API URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pethub_users`
 
 ### Users
 
-| HTTP   | Endpoint     | Description   |
-| ------ | ------------ | ------------- |
-| GET    | `/users`     | Get all users |
-| POST   | `/users`     | Create users  |
-| PATCH  | `/users/:id` | Edit users    |
-| DELETE | `/users/:id` | Delete users  |
+| HTTP   | Endpoint            | Description   |
+| ------ | ------------------- | ------------- |
+| GET    | `/pethub_users`     | Get all users |
+| POST   | `/pethub_users`     | Create users  |
+| PATCH  | `/pethub_users/:id` | Edit users    |
+| DELETE | `/pethub_users/:id` | Delete users  |
 
 ```json
 [
   {
-    "_id": "633c333adadc42808a40c6f6",
+    "_id": "633fe1e1dadc42808a40c8ce",
+    "description": "pecinta kucing",
     "email": "makmur@mail.com",
     "name": "Makmur",
     "nickname": "makmur",
-    "description": "Saya seorang pecinta kucing",
+    "pethub_pets": "",
+    "pets": [
+      {
+        "_id": "633fe2dfdadc42808a40c8d1",
+        "animalTypes": "mammal",
+        "color": "white",
+        "name": "Cat",
+        "notes": "like playing ball",
+        "weight": 3
+      }
+    ],
     "photo": [
       {
         "fileName": "100_6.jpg",
-        "url": "https://api.kontenbase.com/upload/file/storage/633aec8840f5380221732e21/SSUMEfCW/100_6.jpg"
+        "url": "https://api.kontenbase.com/upload/file/storage/633fdefc40f5380221733277/HnMSdXAU/100_6.jpg"
       }
     ]
   }
@@ -65,14 +76,14 @@ API URL: `https://api.kontenbase.com/query/api/v1/6158122d-ffc6-4101-a6dc-225b3c
 
 ### Posts
 
-URL: `https://api.kontenbase.com/query/api/v1/6158122d-ffc6-4101-a6dc-225b3c9a1f9c/Post`
+URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pethub_posts`
 
-| HTTP   | Endpoint     | Description   |
-| ------ | ------------ | ------------- |
-| GET    | `/posts`     | Get all posts |
-| POST   | `/posts`     | Create posts  |
-| PATCH  | `/posts/:id` | Edit posts    |
-| DELETE | `/posts/:id` | Delete posts  |
+| HTTP   | Endpoint            | Description   |
+| ------ | ------------------- | ------------- |
+| GET    | `/pethub_posts`     | Get all posts |
+| POST   | `/pethub_posts`     | Create posts  |
+| PATCH  | `/pethub_posts/:id` | Edit posts    |
+| DELETE | `/pethub_posts/:id` | Delete posts  |
 
 ```json
 [
@@ -84,6 +95,46 @@ URL: `https://api.kontenbase.com/query/api/v1/6158122d-ffc6-4101-a6dc-225b3c9a1f
     "updatedAt": "2022-10-03T14:13:39.468Z",
     "createdBy": null,
     "updatedBy": null
+  }
+]
+```
+
+### Pets
+
+URL: `https://api.kontenbase.com/query/api/v1/bee912c9-4dfd-4be3-97cc-5b3a353e0ac6/pethub_pets?$lookup=*`
+
+| HTTP   | Endpoint           | Description   |
+| ------ | ------------------ | ------------- |
+| GET    | `/pethub_pets`     | Get all pets  |
+| POST   | `/pethub_pets`     | Create pets   |
+| PATCH  | `/pethub_pets/:id` | Edit pets     |
+| DELETE | `/pethub_pets/:id` | Delete pets   |
+
+```json
+[
+  {
+    "_id": "633fe2dfdadc42808a40c8d1",
+    "animalTypes": "mammal",
+    "color": "white",
+    "name": "Cat",
+    "notes": "like playing ball",
+    "pethub_users": [
+      {
+        "_id": "633fe1e1dadc42808a40c8ce",
+        "description": "pecinta kucing",
+        "email": "makmur@mail.com",
+        "name": "Makmur",
+        "nickname": "makmur",
+        "pethub_pets": "",
+        "photo": [
+          {
+            "fileName": "100_6.jpg",
+            "url": "https://api.kontenbase.com/upload/file/storage/633fdefc40f5380221733277/HnMSdXAU/100_6.jpg"
+          }
+        ]
+      }
+    ],
+    "weight": 3
   }
 ]
 ```
