@@ -3,7 +3,8 @@ import { POSTING_API } from "../config.js";
 export async function createPost(status) {
   try {
     const newPost = {
-      status: status,
+      messages: status,
+      createdBy: "633fe1e1dadc42808a40c8ce",
     };
     const responseCreatePost = await fetch(POSTING_API.createPost, {
       method: "POST",
@@ -12,6 +13,6 @@ export async function createPost(status) {
     });
     return responseCreatePost;
   } catch (error) {
-    throw new error(error.message);
+    console.log(error.message);
   }
 }
