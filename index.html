@@ -19,52 +19,138 @@
         <!-- profile -->
         <div class="side-left">
           <div class="card">
-            <h3>About Me</h3>
             <div class="item-container">
               <div class="avatar"></div>
               <div class="profile-name">
                 Celine Dion
-                <p>@celine</p>
+                <p id="profile-email">@celine</p>
               </div>
             </div>
-          </div>
-          <div class="item-container">
-            <div class="action-button">
-              <button class="button">POST</button>
+            <div class="sidenav active">
+              <a href="#">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                  <g
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"
+                    />
+                    <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" />
+                  </g>
+                </svg>
+                Home
+              </a>
+              <a href="#">
+                <svg width="32" height="32" viewBox="0 0 512 512">
+                  <path
+                    d="M256 464c22.779 0 41.411-18.719 41.411-41.6h-82.823c0 22.881 18.633 41.6 41.412 41.6zm134.589-124.8V224.8c0-63.44-44.516-117.518-103.53-131.041V79.2c0-17.682-13.457-31.2-31.059-31.2s-31.059 13.518-31.059 31.2v14.559c-59.015 13.523-103.53 67.601-103.53 131.041v114.4L80 380.8v20.8h352v-20.8l-41.411-41.6z"
+                    fill="#fff"
+                  />
+                </svg>
+                Notification
+              </a>
+              <a href="#">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                  <path
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 21V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H8l-4 4M8 9h8m-8 4h6"
+                  />
+                </svg>
+                Messages
+              </a>
+              <a href="#">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                  <g
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="10" r="3" />
+                    <path
+                      d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"
+                    />
+                  </g>
+                </svg>
+                Profile
+              </a>
             </div>
           </div>
         </div>
         <!-- end profile -->
+
         <!-- main content -->
         <div class="main">
-          <div class="card">
-            <div class="item-container">
-              <div class="col-2">
-                <div class="avatar"></div>
+          <form id="post-field">
+            <div class="card">
+             
+              <div class="item-container">
+                <div class="col-2">
+                  <div class="avatar"></div>
+                </div>
+                <div class="col-max">
+                    <textarea
+                      type="text"
+                      class="form-input-posting"
+                      name="post"
+                      placeholder="What's hapeening ?"
+                      autocomplete="off"
+                    ></textarea>
+                </div>
               </div>
-              <div class="col-max">
-                <input
-                  type="text"
-                  class="form-input-posting"
-                  id="new-todo"
-                  placeholder="What's hapeening ?"
-                  autocomplete="off"
-                />
+              <div class="item-container">
+                <div class="action-button">
+                  <div class="button-upload">
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                      <path
+                        fill="#00E0FF"
+                        d="M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Zm1-4h12l-3.75-5l-3 4L9 13Z"
+                      />
+                    </svg>
+
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                      <path
+                        fill="#00E0FF"
+                        d="M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4v8m16 0v-8h-7v8h7M9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8H3m10 0v2h8V8h-8Z"
+                      />
+                    </svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                      <path
+                        fill="#00E0FF"
+                        d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"
+                      />
+                    </svg>
+                    <svg width="32" height="32" viewBox="0 0 24 24">
+                      <path
+                        fill="#00E0FF"
+                        d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="action-button">
+                  <button class="button">POST</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <h2>TITLE POSTED</h2>
-            <h5>Title description, Dec 7, 2017</h5>
-            <div class="fakeimg" style="height: 200px">Image</div>
-            <p>Some text..</p>
-            <p>
-              Sunt in culpa qui officia deserunt mollit anim id est laborum
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco.
-            </p>
-          </div>
+          </form>
+          <!-- begin content posts -->
+          <section id="post-section" >
+
+          </section>
+          <!-- end card -->
+
         </div>
         <!-- end content -->
         <div class="side-right">
@@ -77,5 +163,9 @@
         </div>
       </div>
     </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
