@@ -25,9 +25,9 @@ const renderPost = (posts) => {
       return `
         <div class="card">
           <div class="button-card">
-            <a href="#" onclick='delPost("${posts._id}")' class="deleted" id="${posts._id}">
+            <button type="button" class="delete-button" id="${posts._id}" data-id="${posts._id}">
               <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#888888" d="M20 6h-4V5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v1H4a1 1 0 0 0 0 2h1v11a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8h1a1 1 0 0 0 0-2ZM10 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1h-4Zm7 14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V8h10Z"/></svg>
-            </a>
+            </button>
          </div>
           <div class="item-container">
             <div class="col-2">
@@ -39,16 +39,11 @@ const renderPost = (posts) => {
                 <label class="text-username" for="">@celine</label>
               </span>
               <div class="post-container">
-                ${posts.status}
+                ${posts.messages}
               </div>
               <div class="post-container">
                 <div class="button-posts">
-                  <svg width="32" height="32" viewBox="0 0 16 16">
-                    <g fill="#FFF">
-                      <path d="M5 8a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2a1 1 0 0 0 0 2z"/>
-                      <path d="m2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7s-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272a1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
-                    </g>
-                  </svg>
+                  <svg width="32" height="32" viewBox="0 0 16 16"><g fill="#fff"><path d="M5 8a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2a1 1 0 0 0 0 2z"/><path d="m2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7s-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272a1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/></g></svg>
                 </div>
                 <div class="button-posts">
                   <svg width="32" height="32" viewBox="0 0 16 16">
@@ -90,10 +85,22 @@ function fetchPosts() {
   });
 }
 
-window.delPost = async (_id) => {
-  const delPosts = await deletePost(_id);
-  fetchPosts();
+async function deletePostById(_id) {
+  deletePost(_id);
+}
+
+export const handleDeleteQuestionById = (event) => {
+  const postId = event.target.getAttribute("data-id");
+  console.log("tess");
+  return deletePostById(postId);
 };
+
+const deleteButtonsElements = document.getElementsByClassName("delete-button");
+const deleteButtons = Array.from(deleteButtonsElements);
+
+deleteButtons.forEach((deleteButton) => {
+  deleteButton.addEventListener("click", handleDeleteQuestionById);
+});
 
 // submit posts
 formElement.addEventListener("submit", async (event) => {
