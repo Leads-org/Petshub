@@ -1,0 +1,27 @@
+{
+  "name": "petshub",
+  "version": "0.1.0",
+  "description": "social media",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leads-org/petshub.git"
+  },
+  "keywords": [
+    "petshub",
+    "social",
+    "media"
+  ],
+  "author": "makmur,zoel,lutfi,ade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leads-org/petshub/issues"
+  },
+  "homepage": "https://github.com/Leads-org/petshub#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
